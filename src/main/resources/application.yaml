@@ -1,0 +1,14 @@
+auth0:
+  audience: https://snippet-printscript-service.austral.edu.ar
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-a48hy3rppaycm004.us.auth0.com/
+logging:
+  level:
+    org:
+      springframework:
+        security: INFO
