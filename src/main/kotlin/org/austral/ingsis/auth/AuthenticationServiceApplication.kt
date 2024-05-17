@@ -40,6 +40,11 @@ class AuthenticationServiceApplication {
     fun createMessage(@RequestBody message: String?): String {
         return String.format("Message was created. Content: %s", message)
     }
+
+    @GetMapping("/scopedAuthenticate")
+    fun getWithRole(): String {
+        return "you should have a specific role for this"
+    }
 }
 
 fun main(args: Array<String>) {
