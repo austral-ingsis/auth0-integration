@@ -1,0 +1,12 @@
+auth0:
+  audience: ${AUTH0_AUDIENCE}
+spring:
+  application:
+      name: resource-service-with-auth-example
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${AUTH_SERVER_URI}
+          client-id: ${AUTH_CLIENT_ID}
+          client-secret: ${AUTH_CLIENT_SECRET}
