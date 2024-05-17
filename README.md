@@ -35,6 +35,9 @@ curl --location '<AUTH_SERVER_URI>' \
 
 Grab the "access_token" field in the response and use it as Bearer token for your requests.
 
+**Note**: this request uses the insecure "password" grant. We won't be using this grant for other use cases than this
+and you shouldn't use it in your Public facing apps.
+
 ## Trying out role based auth
 
 In the section above we requested an auth token with both "read" and "write" scoped. Try requesting only "read" scopes
