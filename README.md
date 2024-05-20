@@ -23,7 +23,7 @@ First you need to get an Auth Token in behalf of the Resource Owner (the user yo
 To do this you can run the following curl:
 
 ```shell
-curl --location '<AUTH_SERVER_URI>' \
+curl --location '<AUTH_SERVER_URI>/oauth/token' \
 --data-urlencode 'grant_type=password' \
 --data-urlencode 'username=<your users email>' \
 --data-urlencode 'password=<your users password>' \
