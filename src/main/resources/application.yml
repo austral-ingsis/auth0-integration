@@ -1,10 +1,15 @@
-auth0:
-  audience: ${AUTH0_AUDIENCE}
 spring:
+  config:
+    # Loads AUTH0_* from a .env file in the working directory, if there is one (see .env.example)
+    import: optional:file:.env[.properties]
   application:
-      name: resource-service-with-auth-example
+    name: resource-service-with-auth-example
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${AUTH_SERVER_URI}
+          # Auth0's "iss" claim is "https://<your-tenant-domain>/" (scheme + trailing slash).
+          # Spring compares it as an exact string, so the format here must match.
+          issuer-uri: https://${AUTH0_DOMAIN}/
+          # Rejects tokens that weren't issued for this API (the "aud" claim).
+          audiences: ${AUTH0_AUDIENCE}

@@ -1,0 +1,10 @@
+name: auth0-integration-setup
+description: Auth0 resources for the auth0-integration demo (API, scope, role, app and two users)
+runtime:
+  name: nodejs
+  options:
+    packagemanager: npm
+# State goes to setup/.pulumi/ instead of Pulumi Cloud (no account or login needed).
+# Relative to the directory you run pulumi from: use the npm scripts, which always run in setup/.
+backend:
+  url: file://.

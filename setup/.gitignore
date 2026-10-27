@@ -1,0 +1,7 @@
+node_modules/
+bin/
+.env
+# Stack config is personal (and has encrypted secrets): keep it local
+Pulumi.*.yaml
+# Local Pulumi state (what was created, with encrypted secrets)
+.pulumi/
